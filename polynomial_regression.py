@@ -8,12 +8,19 @@ dataset=pd.read_csv('Position_Salaries.csv')
 X=dataset.iloc[:,1:2].values
 Y=dataset.iloc[:,2].values
 
-#splitting into testset and trainingset
-"""from sklearn.model_selection import train_test_split
-X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=0)"""
+#Fitting polynomial regression to the dataset
+from sklearn.preprocessing import PolynomialFeatures
+polynomial_regressor=PolynomialFeatures(degree=4)
+X_poly=polynomial_regressor.fit_transform(X)
+linear_regressor2=LinearRegression()
+linear_regressor2.fit(X_poly,Y)
 
-#Feature Scaling
-"""from sklearn.preprocessing import StandardScaler
-sc_X=StandardScaler()
-X_train=sc_X.fit_transform(X_train)
-X_test=sc_X.transform(X_test)"""
+#Visualizing the dataset on Polynomial Regression
+X_grid=np.arange(min(X),max(X),0.1)
+X_grid=X_grid.reshape((len(X_grid),1))
+plt.scatter(X,Y,color='red')
+plt.plot(X_grid,linear_regressor2.predict(polynomial_regressor.fit_transform(X_grid)),color='blue')
+plt.title('Polynomial Regression')
+plt.xlabel('Position Level')
+plt.ylabel('Salary')
+plt.show()
