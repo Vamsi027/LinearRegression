@@ -1,2 +1,2 @@
 # LinearRegression
-This is general format of how linear regression models are used in Machine Learning.
+This is general format of how different types of regression models are used in Machine Learning.
