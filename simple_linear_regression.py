@@ -21,19 +21,19 @@ regressor.fit(X_train,Y_train)
 y_pred=regressor.predict(X_test)
 
 #visualizing the training results
-plt.scatter(X_train,Y_train ,color='red')
-plt.plot(X_train,regressor.predict(X_train),color='blue')
-plt.title('Salary vs Experience(Training Set)')
-plt.xlabel('Years Of Experience')
-plt.ylabel('Salary')
+plt.scatter(X_train,Y_train ,color='')
+plt.plot(X_train,regressor.predict(X_train),color='')
+plt.title('')
+plt.xlabel('')
+plt.ylabel('')
 plt.show()
 
 #visualizing the test results
-plt.scatter(X_test,Y_test ,color='red')
-plt.plot(X_train,regressor.predict(X_train),color='blue')
-plt.title('Salary vs Experience(Test Set)')
-plt.xlabel('Years Of Experience')
-plt.ylabel('Salary')
+plt.scatter(X_test,Y_test ,color='')
+plt.plot(X_train,regressor.predict(X_train),color='')
+plt.title('')
+plt.xlabel('')
+plt.ylabel('')
 plt.show()
 
 #testing the goodness of fit
